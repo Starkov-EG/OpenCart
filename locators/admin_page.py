@@ -1,0 +1,15 @@
+class AdminPage:
+    CATALOG = "#menu-catalog > a"
+    PRODUCTS = "#collapse1 > li:nth-child(2) > a"
+    ADD_NEW = "#content > div.page-header > div > div > a"
+    PRODUCT_NAME = "#input-name1"
+    TAG_TITLE = "#input-meta-title1"
+    SAVE = "#content > div.page-header > div > div > button"
+    TAB_DATA = "#form-product > ul > li:nth-child(2) > a"
+    MODEL = "#input-model"
+    SUCCESS = "#content > div.container-fluid > div.alert.alert-success.alert-dismissible"
+    EDIT_FIRST = "#form-product > div > table > tbody > tr:nth-child(1) > td:nth-child(8) > a"
+    QTY = "#input-quantity"
+    CHECKBOX_FIRST = "#form-product > div > table > tbody > tr:nth-child(1) > td:nth-child(1) > input[type=checkbox]"
+    DEL = "#content > div.page-header > div > div > button.btn.btn-danger"
+

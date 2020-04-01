@@ -19,3 +19,12 @@ class WaitElem:
         except NoSuchElementException as ex:
             print(ex.msg())
         return element
+
+    def wait_click(self, locator):
+        self.locator = locator
+        try:
+            element = self.__wd_wait. \
+                    until(ES.element_to_be_clickable((By.CSS_SELECTOR, self.locator)))
+        except Exception as ex:
+            print(ex.msg())
+        return element
