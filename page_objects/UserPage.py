@@ -1,4 +1,5 @@
 from .BasePage import BasePage
+import logging
 
 
 class UserPage(BasePage):
@@ -10,6 +11,11 @@ class UserPage(BasePage):
     LOGIN_EMAIL_INPUT = {'css': '#input-email'}
     LOGIN_PASSWORD_INPUT = {'css': '#input-password'}
     LOGIN_BUTTON = {'css': 'input[value=Login]'}
+
+    def __init__(self, browser):
+        super().__init__(browser)
+        logger = logging.getLogger("UserPage")
+        logger.info("Инициализация страницы")
 
     def login_user(self, email, password):
         self._input(self.LOGIN_EMAIL_INPUT, email)

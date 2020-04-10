@@ -1,5 +1,6 @@
 from .BasePage import BasePage
 from .ProductPage import ProductPage
+import logging
 
 
 class MainPage(BasePage):
@@ -8,6 +9,10 @@ class MainPage(BasePage):
     PRODUCTS = {'css': IT['css'] + ' .product-layout'}
     PRODUCT_NAMES = {'css': PRODUCTS['css'] + ' .caption h4 a'}
 
+    def __init__(self, browser):
+        super().__init__(browser)
+        logger = logging.getLogger("MainPage")
+        logger.info("Инициализация страницы")
 
     def click_featured_product(self, number):
         index = number - 1

@@ -1,0 +1,39 @@
+INFO     conftest:conftest.py:93 Инициализация фикстуры браузера
+INFO     AdminPage:AdminPage.py:41 Инициализация страницы
+INFO     browser:conftest.py:53 I'm looking for 'input[name='username']' with 'css selector'
+INFO     browser:conftest.py:56 I've found 'input[name='username']' with 'css selector'
+INFO     browser:conftest.py:53 I'm looking for 'input[name='password']' with 'css selector'
+INFO     browser:conftest.py:56 I've found 'input[name='password']' with 'css selector'
+INFO     browser:conftest.py:53 I'm looking for 'button[type='submit']' with 'css selector'
+INFO     browser:conftest.py:56 I've found 'button[type='submit']' with 'css selector'
+INFO     browser:conftest.py:59 I'm clicking <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="638f1155-f8c8-4524-a91e-cc931b58be46")>
+INFO     browser:conftest.py:62 I've clicked <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="638f1155-f8c8-4524-a91e-cc931b58be46")>
+INFO     browser:conftest.py:53 I'm looking for '#menu-catalog > a' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#menu-catalog > a' with 'css selector'
+INFO     browser:conftest.py:59 I'm clicking <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="e96057d5-e53c-4448-91c3-8eb1fdb95448")>
+INFO     browser:conftest.py:62 I've clicked <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="e96057d5-e53c-4448-91c3-8eb1fdb95448")>
+INFO     browser:conftest.py:53 I'm looking for '#collapse1 > li:nth-child(2) > a' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#collapse1 > li:nth-child(2) > a' with 'css selector'
+INFO     browser:conftest.py:53 I'm looking for '#collapse1 > li:nth-child(2) > a' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#collapse1 > li:nth-child(2) > a' with 'css selector'
+INFO     browser:conftest.py:59 I'm clicking <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="147959e7-c320-4b03-832f-a893bc4f0dc2")>
+INFO     browser:conftest.py:62 I've clicked <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="147959e7-c320-4b03-832f-a893bc4f0dc2")>
+INFO     browser:conftest.py:53 I'm looking for '#form-product > div > table > tbody > tr:nth-child(1) > td:nth-child(8) > a' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#form-product > div > table > tbody > tr:nth-child(1) > td:nth-child(8) > a' with 'css selector'
+INFO     browser:conftest.py:59 I'm clicking <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="20f70afa-e30f-4ffc-bda8-fcf3cff95e6c")>
+INFO     browser:conftest.py:62 I've clicked <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="20f70afa-e30f-4ffc-bda8-fcf3cff95e6c")>
+INFO     browser:conftest.py:53 I'm looking for '#form-product > ul > li:nth-child(2) > a' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#form-product > ul > li:nth-child(2) > a' with 'css selector'
+INFO     browser:conftest.py:59 I'm clicking <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="57c16609-4fc7-4f1c-9a5a-0e6869fc3be3")>
+INFO     browser:conftest.py:62 I've clicked <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="57c16609-4fc7-4f1c-9a5a-0e6869fc3be3")>
+INFO     browser:conftest.py:53 I'm looking for '#input-quantity' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#input-quantity' with 'css selector'
+INFO     browser:conftest.py:53 I'm looking for '#input-quantity' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#input-quantity' with 'css selector'
+INFO     browser:conftest.py:53 I'm looking for '#content > div.page-header > div > div > button' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#content > div.page-header > div > div > button' with 'css selector'
+INFO     browser:conftest.py:59 I'm clicking <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="43434f69-5495-4f66-90a5-b6644e3e01ca")>
+INFO     browser:conftest.py:62 I've clicked <selenium.webdriver.firefox.webelement.FirefoxWebElement (session="181a478a-f008-43b9-87a7-f7424641735f", element="43434f69-5495-4f66-90a5-b6644e3e01ca")>
+INFO     browser:conftest.py:53 I'm looking for '#content > div.container-fluid > div.alert.alert-success.alert-dismissible' with 'css selector'
+INFO     browser:conftest.py:56 I've found '#content > div.container-fluid > div.alert.alert-success.alert-dismissible' with 'css selector'
+INFO     conftest:conftest.py:120 Завершение фикстуры браузера
