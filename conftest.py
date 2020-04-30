@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import mysql.connector as mariadb
 
 
 def pytest_addoption(parser):
@@ -113,3 +114,22 @@ def browser(request, url):
         driver.close()
     request.addfinalizer(fin)
     return EventFiringWebDriver(driver=driver, event_listener=MyListener())
+
+
+@pytest.fixture()
+def sql_cursor(request, url):
+    MARIADB_SERVER = url.split("/")[2]
+    MARIADB_DATABASE = "opencart"
+    MARIADB_USER = "remote_user"
+    MARIADB_PASSWORD = "PASSWORD"
+    db_connection = mariadb.connect(
+        user=MARIADB_USER,
+        database=MARIADB_DATABASE,
+        host=MARIADB_SERVER,
+        password=MARIADB_PASSWORD
+    )
+
+    def fin():
+        db_connection.cursor().close()
+    request.addfinalizer(fin)
+    return db_connection.cursor()
