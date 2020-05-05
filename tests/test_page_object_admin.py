@@ -32,7 +32,7 @@ def test_edit_product(browser, password, sql_cursor):
         .click_products()\
         .edit_product_quantity(add_product_qty)\
         .operation_success_wait()
-    sql_cursor.execute(GET_COUNT_PRODUCTS)
+    sql_cursor.execute(GET_PRODUCT_QTY)
     product_qty_after = sql_cursor.fetchall()[0][0]
     assert int(product_qty_after) == int(product_qty_before) + add_product_qty
 
