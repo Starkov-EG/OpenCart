@@ -10,9 +10,11 @@ import mysql.connector as mariadb
 
 def pytest_addoption(parser):
     parser.addoption("--browser", "-B", action="store", default="chrome", help="choose your browser")
-    parser.addoption("--url", "-U", action="store", default="http://192.168.25.7/opencart", help="OpenCart URL")
+    parser.addoption("--url", "-U", action="store", default="https://demo.opencart.com/", help="OpenCart URL")
     parser.addoption("--wait", action="store", default="10", help="Set elements wait time")
     parser.addoption("--pwd", action="store", default="admin", help="admin password")
+    parser.addoption("--executor", action="store", default="192.168.25.162")
+    parser.addoption("--selenoid", action="store", default=True)
 
 
 logger = logging.getLogger("conftest")
@@ -133,3 +135,24 @@ def sql_cursor(request, url):
         db_connection.cursor().close()
     request.addfinalizer(fin)
     return db_connection.cursor()
+
+
+@pytest.fixture
+def remote(request, url):
+    browser = request.config.getoption("--browser")
+    wait = request.config.getoption("--wait")
+    selenoid = request.config.getoption("--selenoid")
+    caps = {"browserName": browser,
+            "enableVNC": True}
+    if selenoid:
+        executor = "192.168.25.162"
+        wd = webdriver.Remote(command_executor=f"http://{executor}:4444/wd/hub", desired_capabilities=caps)
+    else:
+        executor = request.config.getoption("--executor")
+        wd = webdriver.Remote(command_executor=f"http://{executor}:4444/wd/hub",
+                              desired_capabilities={"browserName": browser, "platform": "windows"})
+    wd.implicitly_wait(wait)
+    wd.get(url=url)
+    wd.maximize_window()
+    request.addfinalizer(wd.quit)
+    return wd
