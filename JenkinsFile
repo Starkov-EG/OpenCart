@@ -25,7 +25,21 @@ pipeline {
         stage("system prune") {
             steps {
                 echo " ============== start system prune ================="
-                sh "docker system prune /y"
+                sh "docker system prune -f"
+            }
+        }
+        stage('reports') {
+            steps {
+                echo " ============== allure ================="
+                script {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: './allure-report']]
+                    ])
+                }
             }
         }
     }
