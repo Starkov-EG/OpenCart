@@ -14,7 +14,7 @@ def test_add_to_wish_list(remote):
         .login_user(email="test33@test.ru", password="test") \
         .open_wishlist() \
         .verify_product
-    time.sleep(10)
+    time.sleep(1)
 
 
 def test_add_to_cart(remote):
@@ -30,5 +30,5 @@ def test_add_to_cart(remote):
     # UserPage(browser) \
     #     .login_user(email="test33@test.ru", password="test") \
     #     .verify_payment_form()
-    time.sleep(10)
+    time.sleep(1)
 
