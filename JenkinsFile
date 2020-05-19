@@ -18,7 +18,7 @@ pipeline {
                 sh "docker run --name my_run my_tests"
 
                 echo " ============== copy allure report ================="
-                sh "docker cp my_run:/app/allure-report ."
+                sh "docker cp my_run:/app/allure-results ."
             }
         }
               
