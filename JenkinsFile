@@ -14,12 +14,34 @@ pipeline {
                 echo " ============== start building image ================="
                 sh "docker build -t my_test ."
             }
+            steps {
+                echo " ============== run docker contaner ================="
+                sh "docker run --name my_run my_tests"
+            }
+            steps {
+                echo " ============== copy allure report ================="
+                sh "docker cp my_run:/app/allure-report ."
+            }
         }
         
-        stage("Third step") {
+        stage('reports') {
             steps {
-                echo " ============== start building image ================="
-                sh "free -h"
+                echo " ============== allure ================="
+                script {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'allure-report']]
+                    ])
+                }
+         }
+        
+        stage("system prune") {
+            steps {
+                echo " ============== start system prune ================="
+                sh "docker system prune"
             }
         }
     }
