@@ -13,12 +13,10 @@ pipeline {
             steps {
                 echo " ============== start building image ================="
                 sh "docker build -t my_test ."
-            }
-            steps {
+
                 echo " ============== run docker contaner ================="
                 sh "docker run --name my_run my_tests"
-            }
-            steps {
+
                 echo " ============== copy allure report ================="
                 sh "docker cp my_run:/app/allure-report ."
             }
