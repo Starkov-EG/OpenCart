@@ -18,7 +18,8 @@ pipeline {
         
         stage("Third step") {
             steps {
-                
+                echo " ============== start building image ================="
+                sh "free -h"
             }
         }
     }
