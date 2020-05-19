@@ -1,0 +1,25 @@
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("Docker") {
+            steps {
+                echo " ============== start building image ================="
+                sh "docker build -t my_test ."
+            }
+        }
+        
+        stage("Third step") {
+            steps {
+                
+            }
+        }
+    }
+}
