@@ -36,7 +36,8 @@ pipeline {
                         results: [[path: 'allure-report']]
                     ])
                 }
-         }
+            }
+        }
         
         stage("system prune") {
             steps {
