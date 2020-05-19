@@ -40,7 +40,7 @@ pipeline {
         stage("system prune") {
             steps {
                 echo " ============== start system prune ================="
-                sh "docker system prune"
+                sh "docker system prune /y"
             }
         }
     }
